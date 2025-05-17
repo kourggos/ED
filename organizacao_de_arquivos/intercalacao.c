@@ -176,7 +176,7 @@ void intercalacaoPrincipal(int numPart) {
             arqEscrita = fopen(nomeProxPart, "w");
             
             do {
-                noVencedor = listaNos[2*(F-1)-2];
+                noVencedor = listaNos[2*(numPartAtual)-2];
                 fprintf(arqEscrita, "%d \n", noVencedor->vencedor);
                 tiraDaArvore(noVencedor);
             } while (noVencedor->vencedor != HV);
@@ -190,6 +190,11 @@ void intercalacaoPrincipal(int numPart) {
             for (i=0; i<numPartAtual; i++) {
                 fclose(listaArq[i]);
             }
+
+            for (i=0; i<2*numPartAtual-1; i++) {
+                free(listaNos[i]);
+            }
+
             fclose(arqEscrita);
         }
 
