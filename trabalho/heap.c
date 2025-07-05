@@ -294,19 +294,5 @@ int main(void) {
     } while (c != 's');
     free(reg);
     fclose(fp);
-
-    // fp = fopen("heapRegistros.bin", "rb");
-    // fseek(fp, 0, SEEK_END);
-    // n = ftell(fp)/(sizeof(long long)+(sizeof(char)*50)+sizeof(int)); // numero de registros
-    // fclose(fp);
-
-    // fp = fopen("heapRegistros.bin", "rb+");
-    // fseek(fp, 0, SEEK_SET);
-
-    // constroiHeap(fp, n);
-
-    // fflush(fp);
-
-    // fclose(fp);
     return 0;
 }
