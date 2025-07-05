@@ -295,15 +295,13 @@ int main(void) { // tratar tabela nao inicializada
                 constroiHash(fregs, fhash, tamArqReg);
                 n = tamArqReg;
             case 'e':
-                void constroiHash(FILE *fregistros, FILE *fhash, int tamArqReg) {
                 Registro *reg;
                 for (int i=0; i<tamArqReg; i++) {
-                    reg = buscaRegistro(fregistros, i);
+                    reg = buscaRegistro(fregs, i);
                     insereHash(fhash, reg, n);
                     free(reg);
                 }
-}
-            
+                break;
             case 's':
                 free(reg);
                 fclose(fhash);
